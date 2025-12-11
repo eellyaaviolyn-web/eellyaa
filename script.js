@@ -181,4 +181,50 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(`Ide keren! "${title}" bisa jadi pilihan yang seru buat kita coba! 😄`);
         });
     });
+
+});
+
+// Form submission handler
+document.getElementById('messageForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+    const originalText = submitBtn.innerHTML;
+    
+    // Change button to loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+    submitBtn.disabled = true;
+    
+    try {
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            formStatus.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Pesan berhasil dikirim! Aku akan membalas segera.</div>';
+            formStatus.style.display = 'block';
+            formStatus.style.color = '#25D366';
+            this.reset();
+        } else {
+            throw new Error('Gagal mengirim pesan');
+        }
+    } catch (error) {
+        formStatus.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Gagal mengirim pesan. Coba lagi atau hubungi via WhatsApp.</div>';
+        formStatus.style.display = 'block';
+        formStatus.style.color = '#FF5252';
+    } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 5000);
+    }
 });
