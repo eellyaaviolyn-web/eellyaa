@@ -212,51 +212,48 @@
         <div class="container">
             <div class="section-title">
                 <h2>Kirim Pesan ke Email Aku</h2>
-            </div>
-            <div class="message-container">
-                <p style="font-size: 1.2rem; margin-bottom: 10px;">Pesan yang kamu tulis di sini akan benar-benar dikirim ke email aku.</p>
-                
-                <!-- FORMSPREE FORM - URL SUDAH DIGANTI -->
-                <form id="messageForm" class="message-form" action="https://formspree.io/f/myzrdvro" method="POST">
-                    <div class="form-group">
-                        <label for="userName">Nama kamu (optional):</label>
-                        <input type="text" id="userName" name="name" placeholder="Masukkan nama kamu...">
-                    </div>
-                    <div class="form-group">
-                        <label for="userEmail">Email kamu (optional):</label>
-                        <input type="email" id="userEmail" name="email" placeholder="vinzkie@gmail.com">
-                        <small style="color: #666; font-size: 0.85rem;">Agar aku bisa balas ke email kamu</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="userMessage">Pesan buat aku:</label>
-                        <textarea id="userMessage" name="message" placeholder="Tulis apa aja yang kamu mau sampaikan..." required></textarea>
-                    </div>
-                    
-                    <!-- Hidden field untuk subject -->
-                    <input type="hidden" name="_subject" value="Pesan dari Website Bucin! 💖">
-                    
-                    <button type="submit" class="btn btn-secondary" id="submitBtn">
-                        <i class="fas fa-paper-plane"></i> Kirim Pesan ke Email Aku
-                    </button>
-                    
-                    <div id="formStatus" style="margin-top: 15px; display: none;"></div>
-                    
-                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--dark);">
-                        <i class="fas fa-check-circle" style="color: #25D366;"></i> 
-                        Pesan ini akan dikirim ke email!
-                    </p>
-                </form>
-                
-                <div style="margin-top: 50px; padding-top: 30px; border-top: 2px dashed var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">Atau kalau mau langsung chat...</h3>
-                    <button class="btn" id="directMessageBtn">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Aku Sekarang
-                    </button>
-                    <p style="margin-top: 15px; font-size: 0.95rem;">Klik tombol di atas atau tombol hijau di pojok kanan bawah!</p>
+        </div>
+        <div class="message-container">
+            
+            <!-- FORMSPREE FORM - Tampilan sesuai gambar -->
+            <form id="messageForm" class="message-form" action="https://formspree.io/f/myzrdvro" method="POST">
+                <div class="form-group form-group-minimal">
+                    <input type="text" id="userName" name="name" placeholder="Namamu" class="minimal-input">
                 </div>
+                <div class="form-group form-group-minimal">
+                    <textarea id="userMessage" name="message" placeholder="Tulis pesan..." required class="minimal-input minimal-textarea"></textarea>
+                </div>
+                
+                <!-- Hidden field untuk subject -->
+                <input type="hidden" name="_subject" value="Pesan dari Website Bucin! 💖">
+                
+                <div class="submit-wrapper">
+                    <button type="submit" class="btn-submit-minimal" id="submitBtn">
+                        Kirim Pesan ke Aku
+                    </button>
+                </div>
+                
+                <div id="formStatus" style="margin-top: 15px; display: none;"></div>
+            </form>
+            
+            <!-- Separator sesuai gambar -->
+            <div class="separator">
+                <div class="separator-line"></div>
+                <div class="separator-text">Atau jika kamu lebih suka chat langsung...</div>
+                <div class="separator-line"></div>
+            </div>
+            
+            <!-- WhatsApp Button -->
+            <div class="whatsapp-section">
+                <a href="https://wa.me/6285797982538?text=Hai!%20Aku%20baru%20aja%20liat%20website%20yang%20kamu%20buat.%20Aku%20mau%20ngobrol%20lebih%20lanjut%20nih!" 
+                   class="btn-whatsapp-minimal" 
+                   target="_blank">
+                    Chat via WhatsApp
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -290,4 +287,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
