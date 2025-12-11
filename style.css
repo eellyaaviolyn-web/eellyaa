@@ -560,4 +560,138 @@ footer {
     .modal-content {
         padding: 30px 20px;
     }
+
+}
+
+/* Style untuk form minimalis seperti gambar */
+.message-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group-minimal {
+    margin-bottom: 25px;
+}
+
+.minimal-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.minimal-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+}
+
+.minimal-input::placeholder {
+    color: #888;
+    font-weight: 400;
+}
+
+.minimal-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-submit-minimal {
+    background: linear-gradient(135deg, #FF9EAA 0%, #FF7B9C 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+}
+
+.btn-submit-minimal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 123, 156, 0.3);
+}
+
+/* Separator style */
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 40px auto 30px;
+    max-width: 500px;
+}
+
+.separator-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+}
+
+.separator-text {
+    padding: 0 20px;
+    color: var(--dark);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* WhatsApp button style */
+.whatsapp-section {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.btn-whatsapp-minimal {
+    display: inline-block;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp-minimal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .message-form {
+        padding: 20px;
+    }
+    
+    .separator-text {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    
+    .btn-submit-minimal,
+    .btn-whatsapp-minimal {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
 }
